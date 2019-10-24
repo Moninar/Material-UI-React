@@ -22,6 +22,7 @@ body {
   height: 100%;
   line-height: 1;
   background-color: #fbfbfb;
+  margin: 0;
 }
 .strong {
   font-weight: 700;
@@ -109,37 +110,55 @@ a:active {
 .svgwrapper .icon {
   display: inline-block;
 }
-svg {
-  pointer-events: none;
-}
 iframe {
   border: none;
 }
-#content {
-  max-width: 1500px;
-  width: 90%;
+.footer {
+  padding-top: 20px;
+  border-top: 1px solid #d3d3d3;
+  margin-top: 60px;
+}
+nav {
+  background: #efe9db;
+  width: 250px;
+  height: 100%;
+  position: fixed;
+}
+nav > div {
+  height: 56px;
+}
+nav > div a {
+  display: inline-block;
+  height: 100%;
   display: flex;
-  flex-direction: column;
-  min-height: 85vh;
+  cursor: pointer;
+  align-items: center;
+}
+nav > div a > *:first-child {
+  margin-left: 20px;
+  margin-right: 40px;
+}
+.top-header {
+  height: 80px;
+  background: #4b553a;
+  display: flex;
   justify-content: space-between;
+  color: #fff;
 }
-#content > div {
+.top-header .header-left {
   display: flex;
-  flex: auto;
-  flex-direction: column;
 }
-#root {
-  margin-top: 85px;
-  display: flex;
-  justify-content: center;
+.top-header .header-left .menu-icon,
+.top-header .header-left .logo {
+  cursor: pointer;
 }
-#root.no-margin-left {
-  margin-left: 0;
+.top-header .header-left .logo {
+  width: 50px;
+  height: 50px;
 }
-.App {
-  height: 500px;
-  background: #f00;
+.top-header .exit {
+  cursor: pointer;
 }
-.App:hover {
-  background: #808080;
+.content {
+  margin: 30px 20px 9px 300px;
 }
