@@ -118,25 +118,10 @@ iframe {
   border-top: 1px solid #d3d3d3;
   margin-top: 60px;
 }
-nav {
+.root {
+  width: '100%';
+  maxWidth: 260;
   background: #efe9db;
-  width: 250px;
-  height: 100%;
-  position: fixed;
-}
-nav > div {
-  height: 56px;
-}
-nav > div a {
-  display: inline-block;
-  height: 100%;
-  display: flex;
-  cursor: pointer;
-  align-items: center;
-}
-nav > div a > *:first-child {
-  margin-left: 20px;
-  margin-right: 40px;
 }
 .top-header {
   height: 80px;
@@ -159,14 +144,49 @@ nav > div a > *:first-child {
 .top-header .exit {
   cursor: pointer;
 }
+.markdown {
+  width: 100%;
+  background-color: #f2f6fa;
+}
 .colors iframe {
   width: 100%;
   height: 90vh;
+}
+.button-section h3,
+.slider-section h3 {
+  margin: 18px 10px 18px 0;
+  font-size: 20px;
+}
+.button-section .button,
+.slider-section .button,
+.button-section .fab,
+.slider-section .fab,
+.button-section .extendedIcon,
+.slider-section .extendedIcon,
+.button-section .margin,
+.slider-section .margin {
+  margin: 5;
+}
+.button-section .section,
+.slider-section .section {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #d3d3d3;
+  padding-bottom: 20px;
+}
+.menu-section {
+  position: relative;
+}
+.menu-section .menu {
+  position: absolute;
 }
 .App-Content {
   display: flex;
   flex-direction: row;
   margin-top: 30px;
+}
+.App-Content .hide {
+  display: 'none';
 }
 .App-Content .content {
   width: 100%;
