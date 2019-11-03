@@ -12,8 +12,12 @@ import Zoom from '@material-ui/core/Zoom';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
-import {connect} from 'react-redux';
-import {toggleNavBar} from '../../redux/actions/topHeader.actions';
+import { connect } from 'react-redux';
+import { toggleNavBar } from '../../redux/actions/topHeader.actions';
+import { Link } from 'react-router-dom'
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import Menu from '@material-ui/core/Menu';
+import MenuItem from '@material-ui/core/MenuItem';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -68,23 +72,45 @@ ScrollTop.propTypes = {
 };
 
 
-const TopHeader = ({toggleNavBar}) => {
+const TopHeader = ({ toggleNavBar }) => {
   const classes = useStyles();
-  // handleClick = () => toggleNavBar();
+
+  const [anchorEl, setAnchorEl] = React.useState(null);
+
+  const handleClick = event => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
   return (
     <React.Fragment>
       <CssBaseline />
       <AppBar>
         <Toolbar>
           <IconButton
-          onClick={() => toggleNavBar()}
-          edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+            onClick={() => toggleNavBar()}
+            edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
             <MenuIcon />
           </IconButton>
+          <Link to="/"><img className="logo" src="/logo.png" alt="logo" /></Link>
           <Typography variant="h6" className={classes.title}>
             Design Reference
             </Typography>
-          <Button color="inherit">Login</Button>
+          <ExitToAppIcon onClick={handleClick} style={{cursor: 'pointer'}} />
+          <Menu
+            id="simple-menu"
+            anchorEl={anchorEl}
+            keepMounted
+            open={Boolean(anchorEl)}
+            onClose={handleClose}
+          >
+            <a href="https://github.com/Moninar"><MenuItem onClick={handleClose}>My Github</MenuItem></a>
+            <a href="https://material-ui.com/"><MenuItem onClick={handleClose}>Material-ui</MenuItem></a>
+            <a href="http://uber.github.io/react-vis/examples/showcases/axes"><MenuItem onClick={handleClose}>React-vis</MenuItem></a>
+          </Menu>
         </Toolbar>
       </AppBar>
       <Toolbar id="back-to-top-anchor" />
@@ -99,7 +125,7 @@ const TopHeader = ({toggleNavBar}) => {
 
 
 const mapDispatchToProps = dispatch => ({
-  toggleNavBar: () => dispatch(toggleNavBar()) 
+  toggleNavBar: () => dispatch(toggleNavBar())
 })
 
 

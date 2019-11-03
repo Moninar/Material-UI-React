@@ -123,26 +123,11 @@ iframe {
   maxWidth: 260;
   background: #efe9db;
 }
-.top-header {
-  height: 80px;
-  background: #4b553a;
-  display: flex;
-  justify-content: space-between;
-  color: #fff;
-}
-.top-header .header-left {
-  display: flex;
-}
-.top-header .header-left .menu-icon,
-.top-header .header-left .logo {
-  cursor: pointer;
-}
-.top-header .header-left .logo {
+.logo {
   width: 50px;
   height: 50px;
-}
-.top-header .exit {
   cursor: pointer;
+  margin-right: 10px;
 }
 .markdown {
   width: 100%;
