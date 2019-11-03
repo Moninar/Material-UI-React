@@ -3,7 +3,7 @@ import React from 'react'
 const Colors = () => {
   return (
     <div className='colors'>
-      <iframe src='https://material.io/develop/' />
+      <iframe title="marterial-io for development" src='https://material.io/develop/' />
     </div>
   )
 }
