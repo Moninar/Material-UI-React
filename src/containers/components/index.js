@@ -13,7 +13,6 @@ import Avatar from './components/avatar';
 import Icon from './components/icon';
 import List from './components/list';
 import Table from './components/table';
-import Rating from './components/rating';
 import TreeView from './components/treeView';
 
 const Components = () => {
@@ -74,7 +73,6 @@ const Components = () => {
       <Route path='/components/icon' component={Icon} />
       <Route path='/components/list' component={() => <List checked={checked} handleToggle={handleCheckedToggle} />} />
       <Route path='/components/table' component={Table} />
-      <Route path='/components/rating' component={Rating} />
       <Route path='/components/treeView' component={TreeView} />
     </Switch>
   )

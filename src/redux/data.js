@@ -69,10 +69,6 @@ const navItems = [{
     url: components + 'table'
   }, {
     id: 13,
-    label: 'Rating',
-    url: components + 'rating'
-  }, {
-    id: 14,
     label: 'Tree View',
     url: components + 'treeView'
   }]
