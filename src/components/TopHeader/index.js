@@ -95,7 +95,7 @@ const TopHeader = ({ toggleNavBar }) => {
             edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
             <MenuIcon />
           </IconButton>
-          <Link to="/"><img className="logo" src="/logo.png" alt="logo" /></Link>
+          <Link to="/"><img className="logo" src="logo.png" alt="logo" /></Link>
           <Typography variant="h6" className={classes.title}>
             Design Reference
             </Typography>
