@@ -118,6 +118,13 @@ iframe {
   border-top: 1px solid #d3d3d3;
   margin-top: 60px;
 }
+.dialog-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 10px;
+  margin-bottom: 10px;
+}
 .root {
   width: '100%';
   maxWidth: 260;
@@ -276,6 +283,40 @@ iframe {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.icons-section h3 {
+  margin-bottom: 20px;
+}
+.icons-section ul {
+  display: flex;
+  flex-flow: wrap;
+  overflow: scroll;
+}
+.icons-section ul li {
+  cursor: pointer;
+  padding: 10px;
+  border: #fff 1px solid;
+  display: flex;
+  height: fit-content;
+}
+.icons-section ul li:hover {
+  background-color: #e6ecf2;
+  border: #c5d3e0 1px solid;
+}
+.icons-section ul li svg {
+  width: 40px;
+  height: 40px;
+  fill: #5c7a99;
+}
+.modal-icon-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.modal-icon-title svg {
+  width: 40px;
+  height: 40px;
+  fill: #5c7a99;
 }
 .App-Content {
   display: flex;

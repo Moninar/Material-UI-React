@@ -21,7 +21,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const NavBar = ({navItems, toggleNavBarItems }) => {
+const NavBar = ({ navItems, toggleNavBarItems }) => {
   const classes = useStyles();
 
   const toggleItems = id => {
@@ -47,37 +47,41 @@ const NavBar = ({navItems, toggleNavBarItems }) => {
           subNavItems = item['subNavItems'];
         }
         if (!SubIcon)
-          return (<Link to={item.url}>
-            <ListItem key={item.id} button >
-              <ListItemIcon>
-                <CusIcon />
-              </ListItemIcon>
-              <ListItemText primary={item['label']} />
-            </ListItem></Link>)
+          return (
+            <Link to={item.url}>
+              <ListItem key={item.id} button >
+                <ListItemIcon>
+                  <CusIcon />
+                </ListItemIcon>
+                <ListItemText primary={item['label']} />
+              </ListItem></Link>)
         else {
-          return (<React.Fragment >
-            <ListItem key={item.id} button onClick={() => { toggleItems(item.id) }}>
-              <ListItemIcon>
-                <CusIcon />
-              </ListItemIcon>
-              <ListItemText primary={item['label']} />
-              {checkItemOpen(item.id) ? <ExpandLess /> : <ExpandMore />}
-            </ListItem>
-            <Collapse in={checkItemOpen(item.id)} timeout="auto" unmountOnExit>
-              <List component="div" disablePadding>
-                {
-                  subNavItems.map(subItem => (
-                    <Link to={subItem.url}><ListItem key={subItem.id} button className={classes.nested}>
-                      <ListItemIcon>
-                        <SubIcon />
-                      </ListItemIcon>
-                      <ListItemText primary={subItem['label']} />
-                    </ListItem></Link>
-                  ))
-                }
-              </List>
-            </Collapse>
-          </React.Fragment>)
+          return (
+            <React.Fragment >
+              <Link>
+                <ListItem key={item.id} button onClick={() => { toggleItems(item.id) }}>
+                  <ListItemIcon>
+                    <CusIcon />
+                  </ListItemIcon>
+                  <ListItemText primary={item['label']} />
+                  {checkItemOpen(item.id) ? <ExpandLess /> : <ExpandMore />}
+                </ListItem>
+              </Link>
+              <Collapse in={checkItemOpen(item.id)} timeout="auto" unmountOnExit>
+                <List component="div" disablePadding>
+                  {
+                    subNavItems.map(subItem => (
+                      <Link to={subItem.url}><ListItem key={subItem.id} button className={classes.nested}>
+                        <ListItemIcon>
+                          <SubIcon />
+                        </ListItemIcon>
+                        <ListItemText primary={subItem['label']} />
+                      </ListItem></Link>
+                    ))
+                  }
+                </List>
+              </Collapse>
+            </React.Fragment>)
         }
       })}
     </List>

@@ -28,7 +28,7 @@ class App extends Component {
               <Route path='/charts'>
                 <Charts />
               </Route>
-              <Route path='/icons'>
+              <Route path='/iconography'>
                 <Icons />
               </Route>
             </Switch>
