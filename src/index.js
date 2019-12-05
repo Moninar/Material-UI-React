@@ -10,7 +10,7 @@ import store from './redux/store';
 
 ReactDOM.render(
   <Provider store={store}>
-    <BrowserRouter basename="/Material-UI-React">
+    <BrowserRouter basename={"/Material-UI-React"}>
       <App />
     </BrowserRouter>
   </Provider>,
