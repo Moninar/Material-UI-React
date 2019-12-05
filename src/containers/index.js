@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Switch, Route } from 'react-router-dom'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import { TopHeader, NavBar, Footer } from '../components';
 
 import Home from './home/'
@@ -12,30 +12,32 @@ import { connect } from 'react-redux';
 
 class App extends Component {
   render() {
-    const {navBarToggle} = this.props;
+    const { navBarToggle } = this.props;
     return (
-      <div className="App">
-        <TopHeader />
-        <div className="App-Content">
-          {navBarToggle ? <NavBar /> : null}
-          <div className="content">
-            <Switch>
-              <Route exact path='/' component={Home} />
-              <Route path='/colors' component={Colors} />
-              <Route path='/components'>
-                <Components />
-              </Route>
-              <Route path='/charts'>
-                <Charts />
-              </Route>
-              <Route path='/iconography'>
-                <Icons />
-              </Route>
-            </Switch>
-            <Footer className="footer" />
+      <BrowserRouter basename={"/Material-UI-React"}>
+        <div className="App">
+          <TopHeader />
+          <div className="App-Content">
+            {navBarToggle ? <NavBar /> : null}
+            <div className="content">
+              <Switch>
+                <Route exact path='/' component={Home} />
+                <Route path='/colors' component={Colors} />
+                <Route path='/components'>
+                  <Components />
+                </Route>
+                <Route path='/charts'>
+                  <Charts />
+                </Route>
+                <Route path='/iconography'>
+                  <Icons />
+                </Route>
+              </Switch>
+              <Footer className="footer" />
+            </div>
           </div>
         </div>
-      </div>
+      </BrowserRouter>
     );
   }
 
