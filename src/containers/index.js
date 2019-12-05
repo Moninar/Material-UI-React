@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import { HashRouter, Switch, Route } from 'react-router-dom'
 import { TopHeader, NavBar, Footer } from '../components';
 
 import Home from './home/'
@@ -14,7 +14,7 @@ class App extends Component {
   render() {
     const { navBarToggle } = this.props;
     return (
-      <BrowserRouter basename={"/Material-UI-React"}>
+      <HashRouter basename={"/Material-UI-React"}>
         <div className="App">
           <TopHeader />
           <div className="App-Content">
@@ -37,7 +37,7 @@ class App extends Component {
             </div>
           </div>
         </div>
-      </BrowserRouter>
+      </HashRouter>
     );
   }
 
